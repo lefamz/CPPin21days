@@ -6,12 +6,12 @@
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 
-#include <iostream>
 #include "Main.hpp"
 
 int main() {
 
 	int result = day9();
+	result += day10();
 
 	return result;
 }

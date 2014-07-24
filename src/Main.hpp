@@ -8,6 +8,7 @@
 #ifndef MAIN_HPP_
 #define MAIN_HPP_
 
-#include "day9.hpp"
+#include "days/day9.hpp"
+#include "days/day10.hpp"
 
 #endif /* MAIN_HPP_ */
