@@ -1,6 +1,6 @@
 #include "./day09.hpp"
 
-CAT & MakeCat(int age);
+CAT * MakeCat(int age);
 
 int day9(){
 
@@ -36,21 +36,19 @@ int day9(){
 
 	// CAT problem: MakeCat return reference,
 	int age = 7;
-	CAT Boots = MakeCat(age);
+	CAT * pBoots = MakeCat(age);
 
-	cout << "Boots is " << Boots.GetAge() << " years old"<< endl;
+	cout << "Boots is " << pBoots->GetAge() << " years old"<< endl;
 
-	// cleaning after
-	CAT * pBoots = & Boots;
+
 	delete pBoots;
-
 
 	return 0;
 }
 
-CAT & MakeCat(int age)
+CAT * MakeCat(int age)
 {
 	CAT * pCat = new CAT(age);
-	return *pCat;
+	return pCat;
 }
 
