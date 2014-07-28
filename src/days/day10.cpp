@@ -14,13 +14,12 @@ int day10(){
 	int r = circle.getRadius();
 	cout << r << endl;
 
-	SimpleCircle onePlus = circle++;
+	SimpleCircle onePlus;
+	onePlus = circle++;
 
 	cout << onePlus.getRadius() << " " << circle.getRadius() << endl;
 
-	onePlus = 0;
 	onePlus = ++circle;
-
 	cout << onePlus.getRadius() << " " << circle.getRadius() << endl;
 
 	cout << "Day 10 finished" << endl;
@@ -35,24 +34,37 @@ SimpleCircle::SimpleCircle(int radius){
 	itsRadius= new int(radius);
 }
 
-SimpleCircle::SimpleCircle(SimpleCircle * pntr){
-	cout << "Cpy constructor in: " << pntr->getRadius() << endl;
-	itsRadius = new int(pntr->getRadius());
+SimpleCircle::SimpleCircle(const SimpleCircle & pntr){
+	cout << "Cpy constructor in: " << pntr.getRadius() << endl;
+	itsRadius = new int(pntr.getRadius());
 }
 
 const SimpleCircle SimpleCircle::operator++ (){
 	cout << "Prefix called" << endl;
 	(*itsRadius)++;
-	SimpleCircle tmp(this);
+	SimpleCircle tmp(*this);
 	return tmp;
 }
 
 const SimpleCircle SimpleCircle::operator++ (int){
 	cout << "Postfix called" << endl;
-	SimpleCircle tmp(this);
-	//++(*itsRadius);
-	*itsRadius=*itsRadius+1;
+	SimpleCircle tmp(*this);
+	++(*itsRadius);
+	//*itsRadius=*itsRadius+1;
+	cout << "Returning from postfix .." << tmp.getRadius() << " " << *itsRadius << endl;
 	return tmp;
+}
+
+const SimpleCircle SimpleCircle::operator= (const SimpleCircle & src){
+	cout << "Assigment operator called: " << src.getRadius() << endl;
+
+	if (this == &src){
+		return *this;
+	}
+
+	*itsRadius=src.getRadius();
+	return *this;
+
 }
 
 

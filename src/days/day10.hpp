@@ -19,7 +19,7 @@ private:
 public:
 	SimpleCircle();
 	SimpleCircle(int radius);
-	SimpleCircle(SimpleCircle *);
+	SimpleCircle(const SimpleCircle &);
 
 	~SimpleCircle(){
 		cout << "Circle destructor .." << endl;
@@ -36,6 +36,7 @@ public:
 
 	const SimpleCircle operator++ ();
 	const SimpleCircle operator++ (int);
+	const SimpleCircle operator= (const SimpleCircle & src);
 
 
 };
