@@ -14,6 +14,8 @@ int main() {
 	result += day9();
 	std::cout << "day 10: " << std::endl << std::endl;
 	result += day10();
+	std::cout << "day 11: " << std::endl << std::endl;
+	result += day11();
 
 	return result;
 }
