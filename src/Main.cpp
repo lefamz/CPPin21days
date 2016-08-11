@@ -10,11 +10,11 @@
 
 int main() {
 	int result = 0;
-	std::cout << "day 9: " << std::endl << std::endl;
+	std::cout << "day 9: " << std::endl;
 	result += day9();
-	std::cout << "day 10: " << std::endl << std::endl;
+	std::cout << std::endl << "day 10: " << std::endl << std::endl;
 	result += day10();
-	std::cout << "day 11: " << std::endl << std::endl;
+	std::cout << std::endl << "day 11: " << std::endl << std::endl;
 	result += day11();
 
 	return result;

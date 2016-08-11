@@ -10,9 +10,9 @@
 
 #include <iostream>
 
-#include "days/day08.hpp"
-#include "days/day09.hpp"
-#include "days/day10.hpp"
-#include "days/day11.hpp"
+#include "day08.hpp"
+#include "day09.hpp"
+#include "day10.hpp"
+#include "day11.hpp"
 
 #endif /* MAIN_HPP_ */
